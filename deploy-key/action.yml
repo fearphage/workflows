@@ -1,0 +1,14 @@
+name: Setup SSH
+description: Setups up private ssh key to clone from private repositories
+author: fearphage
+inputs:
+  ssh-private-key:
+    description: The key to use to checkout private repositories
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.ssh-private-key }}
+branding:
+  icon: lock
+  color: yellow
