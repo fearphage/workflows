@@ -7,10 +7,10 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-mkdir -p ~/.ssh
+mkdir -p "$HOME/.ssh"
 
-ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
+ssh-keyscan -t rsa github.com > "$HOME/.ssh/known_hosts"
 
-echo "$1" > ~/.ssh/id_rsa
+echo "$1" > "$HOME/.ssh/id_rsa"
 
-chmod 400 ~/.ssh/id_rsa
+chmod 400 "$HOME/.ssh/id_rsa"
